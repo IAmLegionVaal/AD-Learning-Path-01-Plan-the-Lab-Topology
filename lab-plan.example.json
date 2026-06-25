@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "labName": "AD Learning Path",
+  "forest": {
+    "dnsName": "corp.lab",
+    "netbiosName": "CORP",
+    "functionalLevel": "Windows2016Forest"
+  },
+  "network": {
+    "type": "NAT",
+    "name": "AD-LAB-NAT",
+    "ipv4Prefix": "10.10.10.0/24",
+    "gateway": "10.10.10.1",
+    "clientDhcpRangeStart": "10.10.10.100",
+    "clientDhcpRangeEnd": "10.10.10.199"
+  },
+  "host": {
+    "hypervisor": "Hyper-V",
+    "minimumLogicalProcessors": 8,
+    "minimumMemoryGB": 20,
+    "minimumFreeStorageGB": 250
+  },
+  "systems": [
+    {
+      "name": "DC01",
+      "role": "DomainController",
+      "operatingSystem": "Windows Server 2025",
+      "ipv4Address": "10.10.10.10",
+      "prefixLength": 24,
+      "defaultGateway": "10.10.10.1",
+      "dnsServers": [
+        "10.10.10.10"
+      ],
+      "vcpu": 2,
+      "memoryGB": 4,
+      "diskGB": 60,
+      "staticAddress": true
+    },
+    {
+      "name": "DC02",
+      "role": "DomainController",
+      "operatingSystem": "Windows Server 2025",
+      "ipv4Address": "10.10.10.11",
+      "prefixLength": 24,
+      "defaultGateway": "10.10.10.1",
+      "dnsServers": [
+        "10.10.10.10",
+        "10.10.10.11"
+      ],
+      "vcpu": 2,
+      "memoryGB": 4,
+      "diskGB": 60,
+      "staticAddress": true
+    },
+    {
+      "name": "SRV01",
+      "role": "MemberServer",
+      "operatingSystem": "Windows Server 2025",
+      "ipv4Address": "10.10.10.20",
+      "prefixLength": 24,
+      "defaultGateway": "10.10.10.1",
+      "dnsServers": [
+        "10.10.10.10",
+        "10.10.10.11"
+      ],
+      "vcpu": 2,
+      "memoryGB": 4,
+      "diskGB": 60,
+      "staticAddress": true
+    },
+    {
+      "name": "CL01",
+      "role": "Client",
+      "operatingSystem": "Windows 11 Pro",
+      "ipv4Address": "10.10.10.101",
+      "prefixLength": 24,
+      "defaultGateway": "10.10.10.1",
+      "dnsServers": [
+        "10.10.10.10",
+        "10.10.10.11"
+      ],
+      "vcpu": 2,
+      "memoryGB": 4,
+      "diskGB": 64,
+      "staticAddress": false
+    }
+  ]
+}
