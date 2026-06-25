@@ -1,0 +1,47 @@
+# Local working plan
+lab-plan.json
+
+# PowerShell output and logs
+*.log
+*.tmp
+*.bak
+TestResults.xml
+
+# Sensitive evidence formats
+*.pfx
+*.p12
+*.key
+*.cer
+*.crt
+*.rdp
+*.reg
+*.evtx
+
+# Virtual machine artifacts
+*.vhd
+*.vhdx
+*.vmdk
+*.vdi
+*.iso
+*.ova
+*.ovf
+*.vmcx
+*.vmrs
+*.vmgs
+
+# Local evidence that may contain environment-specific data
+evidence/*.txt
+evidence/*.csv
+evidence/*.json
+evidence/*.xml
+evidence/*.zip
+
+# Keep the evidence instructions tracked
+!evidence/README.md
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
